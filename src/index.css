@@ -386,6 +386,12 @@ Menu
  border: 2px solid #585555;
  border-radius: 100%;
  padding: 0px 5px 0px 5px;
+ transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back_to_menu_link:hover{
+  background-color: #5e5c5c;
+  color: rgb(167, 168, 168);
 }
 
 .tik{

@@ -72,8 +72,8 @@ const Cart = ({ items, sales, clearCart, removeFromCart }) => {
         <p>Your cart is empty</p>
       ) : (
         <ul>
-          {items.map((item) => (
-            <li className="menü" key={item.id}>
+    {items.map((item, index) => (
+    <li className="menü" key={item.id || index}>
               <img
                 src={item.img}
                 alt={item.title}
@@ -90,14 +90,14 @@ const Cart = ({ items, sales, clearCart, removeFromCart }) => {
                   className="arttır"
                   onClick={() => increaseQuantity(item.id)}
                 >
-                  +
+                  <i className="fa-solid fa-plus"></i>
                 </button>
                 <p className="adet">{quantities[item.id]}</p>
                 <button
                   className="azalt"
                   onClick={() => decreaseQuantity(item.id)}
                 >
-                  -
+                  <i className="fa-solid fa-minus"></i>
                 </button>
               </div>
             </li>
