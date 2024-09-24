@@ -26,10 +26,13 @@ const Cart = ({ items, sales, clearCart, removeFromCart }) => {
   };
 
   const buyItems = () => {
-    const orderData = items.map(item => ({
+    const orderData = {
+      totalprice: totalPrice,
+      products: items.map(item => ({
       id: item.id,
       quantity: quantities[item.id], // Her item'ın adet bilgisi
-    }));
+    }))
+  };
   
     fetch("http://localhost:5017/orders", {
       method: "POST",
